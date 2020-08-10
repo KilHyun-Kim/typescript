@@ -1,0 +1,15 @@
+npm init 
+
+npm install lite-server --save-dev - 실시간으로 개발하는 화면을 볼 수 있음 ( 편하네 )
+
+* --save-dev
+이 폴더에서만 사용하겠다. 
+dev환경으로 사용하겠다. (개발할때만 사용)
+
+
+일반적인 환경에서의 웹은 Ts 파일을 바로 직역할 수 없기때문에
+tsc 작업을 거쳐줘야한다.
+ - tsc main.ts
+번거롭기 때문에 tsc --init 을 사용하여
+tsc만을 칠경우 모든 Ts 파일을 Js 로 바꿔준다.
+
