@@ -82,3 +82,42 @@ console.log(batmanCar);
     => 하지만 typescript 의 제작 의도와 다른 방향으로 진행되기 때문에,
     최대한 쓰지 않는 것이 좋다.
 */
+// ****** function - function 에도 type이 있다. ****
+// 1) function return type
+function returnMyName() {
+    // function 뒤에 return의 type을 적어준다.
+    return myName;
+}
+console.log(returnMyName());
+// 2) function argument types
+function multiply(value1, value2) {
+    // arguments 에 type 을 지정해 줌으로써 오류를 방지할 수 있다.
+    // type 과 다른 값을 넣을 경우 에러를 발생시킨다.
+    return value1 * value2;
+}
+console.log(multiply(2, 3));
+// 3) Function Types
+var superMultiply;
+// superMultipy 는 함수를 받는다.
+// 함수에도 다양한 종류가 있기 때문에 받는 arguments와 return 값을 적어줌으로써 구분 해준다.
+superMultiply = multiply;
+var resultMultiply = multiply(4, 6);
+console.log(resultMultiply);
+console.log(superMultiply);
+console.log(superMultiply(4, 5));
+// type 을 생성하여 맞는 각각의 값에 type으로 넣어준다
+// 추가로 key 와 value를 넣어 줄때는 넣는 값도 고쳐줘야 한다.
+// heroName = { name: "Superman", age: 25 };
+var heroOne = { name: "Batman", age: 22, address: "Godam" };
+var heroTwo = { name: "Superman", age: 22, address: "Godam" };
+var heroThree = { name: "Ironman", age: 22, address: "Godam" };
+// **** Union Types ****
+// Union Types 를 사용하여 여러가지의 타입을 추가할 수 있다.
+var heroTeam = ["Superman", "Batman"];
+heroTeam = [101, 102];
+heroTeam = [false, true];
+// **** Check Types : typeof ****
+var finalWinner = "Batman";
+if (typeof finalWinner == "string") {
+    console.log(finalWinner);
+}
